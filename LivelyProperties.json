@@ -1,4 +1,9 @@
 {
+  "matrixText": {
+   "text" : "Matrix Characters",
+   "type" : "textbox",
+   "value" : "゠アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレワヰヱヲンヺ・ーヽヿ0123456789"
+  },
   "matrixColor": {
     "text": "Font Color",
     "type": "color",
