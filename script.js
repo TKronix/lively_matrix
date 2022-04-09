@@ -1,5 +1,5 @@
 var root = {
-  wavecolor: {  
+  wavecolor: {
     r: 125,
     g: 52,
     b: 253
@@ -20,10 +20,8 @@ var hue = -0.01;
 c.height = window.innerHeight;
 c.width = window.innerWidth;
 
-// the characters
-var konkani  = root.matrixText;
 // converting the string into an array of single characters
-var characters = konkani.split("");
+var characters = root.matrixText.split("");
 var font_size = 14;
 var columns = c.width/font_size;    // number of columns for the rain
 var gradient = ctx.createLinearGradient(0,10, 0,200);
@@ -75,21 +73,27 @@ function draw() {
     }
 }
 
-setInterval(draw, root.matrixspeed);
+window.onresize=()=>{
+    location.reload();
+}
 
+setInterval(draw, root.matrixspeed);
 
 function livelyPropertyListener(name, val)
 {
   switch(name) {
+    case "matrixText":
+      characters = val.split("");
+      break;
     case "matrixColor":
       root.wavecolor =  hexToRgb(val);
       break;
     case "rainBow":
       root.rainbow = val;
-      break;   
+      break;
     case "rainbowSpeed":
       root.rainbowSpeed = val/100;
-      break;     
+      break;
   }
 }
 
@@ -101,4 +105,3 @@ function hexToRgb(hex) {
     b: parseInt(result[3], 16)
   } : null;
 }
-
